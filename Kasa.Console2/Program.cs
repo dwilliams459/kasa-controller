@@ -13,7 +13,7 @@ ILogger logger = loggerFactory.CreateLogger("Main");
 using IKasaOutlet outlet = new KasaOutlet("192.168.0.121", new Options
 {
     LoggerFactory = loggerFactory,
-    MaxAttempts = 1
+    MaxAttempts = 2
 });
 
 await outlet.System.SetOutletOn(true);
@@ -21,7 +21,7 @@ await outlet.System.SetOutletOn(true);
 bool isOn = await outlet.System.IsOutletOn();
 logger.LogInformation($"Is outlet on: {isOn}");
 
-int minSignalStrength = 0;
+//int minSignalStrength = 0;
 
 CancellationTokenSource cts = new();
 
@@ -33,6 +33,7 @@ Timer timer = new(async _ => {
         var isOutletCurrentlyOn = await outlet.System.IsOutletOn();
         if (isOutletCurrentlyOn != isOn)
         {
+            Console.WriteLine($"Change Event: {isOutletCurrentlyOn}");
             logger.LogInformation($"Change Event: {isOutletCurrentlyOn}");
         }
     
@@ -40,7 +41,7 @@ Timer timer = new(async _ => {
     }
     catch (NetworkException nex)
     {
-        logger.LogError($"Network Error: {nex.Message}")
+        logger.LogError($"Network Error: {nex.Message}");
     }
 
     // int rssi = systemInfo.SignalStrength;
