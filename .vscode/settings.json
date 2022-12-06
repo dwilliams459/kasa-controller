@@ -1,0 +1,11 @@
+{
+    "workbench.colorCustomizations": {
+        "[Spotify Soft]": {
+            "errorForeground": "#ff0000ee",
+            "terminal.ansiBrightRed": "#ff0000"
+        },
+        "activityBar.background": "#5D0B21",
+        "titleBar.activeBackground": "#820F2E",
+        "titleBar.activeForeground": "#FFFBFC"
+    }
+}
