@@ -93,4 +93,5 @@ public struct SystemInfo {
     /// </summary>
     [JsonProperty("feature")] public ISet<Feature> Features { get; internal set; }
 
+    [JsonProperty("children")] public ISet<Child> Children { get; internal set; }
 }
