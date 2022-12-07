@@ -62,7 +62,7 @@ public struct Timer {
         IsEnabled       = true;
         TotalDuration   = duration;
         WillSetOutletOn = willSetOutletOn;
-        //RemainingDuration = duration;
+        RemainingDuration = duration;
     }
 
 }
