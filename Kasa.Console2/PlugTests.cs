@@ -26,7 +26,7 @@ public class PlugOperations
             LoggerFactory = _loggerFactory, //  = loggerFactory,
             MaxAttempts = 2
         });
-        //await outlet.System.SetOutletOn(true);
+        await outlet.System.SetOutletOn(true);
 
         bool isOn = await outlet.System.IsOutletOn();
         _logger.LogInformation($"Is outlet on: {isOn}");

@@ -21,6 +21,21 @@ public partial class KasaOutlet {
     }
 
     /// <inheritdoc />
+    Task IKasaOutlet.ISystemCommands.SetChildOutletOn(bool turnOn, string child_id) {
+        // https://community.home-assistant.io/t/tp-link-kasa-kp400-2-outlet-support/113135/9
+        // In order to support multiple outlets, a context must be added:
+
+        // {"system":{"set_relay_state":{"state":0}},"context":{"child_ids":["000000000000000000000000"]}}
+        // The child_id can be found by looking at the results of the get_sysinfo command. Multiple child_ids can be sent, so for the HS300 with 6 outlets you could turn on up to all 6 at once.
+
+        // return _client.Send<JObject>(CommandFamily.System, 
+        //     "set_relay_state", new { state = Convert.ToInt32(turnOn) },
+        //     "context", new { child_ids = new string[] {"asdf", "asdf"}}
+        // );
+        throw new NotImplementedException();
+    }
+
+    /// <inheritdoc />
     Task<SystemInfo> IKasaOutlet.ISystemCommands.GetInfo() {
         return _client.Send<SystemInfo>(CommandFamily.System, "get_sysinfo");
     }
