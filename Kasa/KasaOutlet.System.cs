@@ -28,10 +28,11 @@ public partial class KasaOutlet {
         // {"system":{"set_relay_state":{"state":0}},"context":{"child_ids":["000000000000000000000000"]}}
         // The child_id can be found by looking at the results of the get_sysinfo command. Multiple child_ids can be sent, so for the HS300 with 6 outlets you could turn on up to all 6 at once.
 
-        // return _client.Send<JObject>(CommandFamily.System, 
-        //     "set_relay_state", new { state = Convert.ToInt32(turnOn) },
-        //     "context", new { child_ids = new string[] {"asdf", "asdf"}}
-        // );
+        var deviceList = new { child_ids = new string[] { child_id }};
+        var commandParameters = new { state = Convert.ToInt32(turnOn), context = deviceList };
+
+        var sendResult = _client.Send<JObject>(CommandFamily.System, "set_relay_state", commandParameters);
+
         throw new NotImplementedException();
     }
 
