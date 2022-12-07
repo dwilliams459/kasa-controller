@@ -1,63 +1,73 @@
 ﻿using Kasa;
+using Kasa.Console2;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
 using Timer = System.Threading.Timer;
 
-ILoggerFactory loggerFactory = LoggerFactory.Create(builder => builder
-    .ClearProviders()
-    .SetMinimumLevel(LogLevel.Trace)
-    .AddNLog());
-
-ILogger logger = loggerFactory.CreateLogger("Main");
-
-using IKasaOutlet outlet = new KasaOutlet("192.168.0.121", new Options
+internal class Program
 {
-    LoggerFactory = loggerFactory,
-    MaxAttempts = 2
-});
-
-await outlet.System.SetOutletOn(true);
-
-bool isOn = await outlet.System.IsOutletOn();
-logger.LogInformation($"Is outlet on: {isOn}");
-
-//int minSignalStrength = 0;
-
-CancellationTokenSource cts = new();
-
-Timer timer = new(async _ => {
-    try
+    private static void Main(string[] args)
     {
-        SystemInfo systemInfo = await outlet.System.GetInfo();
-    
-        var isOutletCurrentlyOn = await outlet.System.IsOutletOn();
-        if (isOutletCurrentlyOn != isOn)
-        {
-            Console.WriteLine($"Change Event: {isOutletCurrentlyOn}");
-            logger.LogInformation($"Change Event: {isOutletCurrentlyOn}");
-        }
-    
-        isOn = isOutletCurrentlyOn;
+        ILoggerFactory loggerFactory = LoggerFactory.Create(builder => builder
+            .ClearProviders()
+            .SetMinimumLevel(LogLevel.Trace)
+            .AddNLog());
+
+        ILogger logger = loggerFactory.CreateLogger("Main");
+
+        // using IKasaOutlet outlet = new KasaOutlet("192.168.0.121", new Options
+        // {
+        //     LoggerFactory = loggerFactory,
+        //     MaxAttempts = 2
+        // });
+
+        var plugTests = new PlugOperations(loggerFactory);
+        plugTests.RunTestsAsync().GetAwaiter().GetResult();
     }
-    catch (NetworkException nex)
-    {
-        logger.LogError($"Network Error: {nex.Message}");
-    }
+}
 
-    // int rssi = systemInfo.SignalStrength;
-    // logger.LogDebug("Signal strength: {rssi} dBm", rssi);
+// await outlet.System.SetOutletOn(true);
 
-    // if (rssi < minSignalStrength)
-    // {
-    //     logger.LogInformation("New minimum signal strength: {rssi} dBm", rssi);
-    //     minSignalStrength = rssi;
-    // }
-}, null, TimeSpan.Zero, TimeSpan.FromSeconds(2));
+// bool isOn = await outlet.System.IsOutletOn();
+// logger.LogInformation($"Is outlet on: {isOn}");
 
-Console.CancelKeyPress += (sender, eventArgs) => cts.Cancel();
+// //int minSignalStrength = 0;
 
-cts.Token.WaitHandle.WaitOne();
-timer.Dispose();
+// CancellationTokenSource cts = new();
+
+// Timer timer = new(async _ => {
+//     try
+//     {
+//         SystemInfo systemInfo = await outlet.System.GetInfo();
+
+//         var isOutletCurrentlyOn = await outlet.System.IsOutletOn();
+//         if (isOutletCurrentlyOn != isOn)
+//         {
+//             Console.WriteLine($"Change Event: {isOutletCurrentlyOn}");
+//             logger.LogInformation($"Change Event: {isOutletCurrentlyOn}");
+//         }
+
+//         isOn = isOutletCurrentlyOn;
+//     }
+//     catch (NetworkException nex)
+//     {
+//         logger.LogError($"Network Error: {nex.Message}");
+//     }
+
+//     // int rssi = systemInfo.SignalStrength;
+//     // logger.LogDebug("Signal strength: {rssi} dBm", rssi);
+
+//     // if (rssi < minSignalStrength)
+//     // {
+//     //     logger.LogInformation("New minimum signal strength: {rssi} dBm", rssi);
+//     //     minSignalStrength = rssi;
+//     // }
+// }, null, TimeSpan.Zero, TimeSpan.FromSeconds(2));
+
+// Console.CancelKeyPress += (sender, eventArgs) => cts.Cancel();
+
+// cts.Token.WaitHandle.WaitOne();
+// timer.Dispose();
 
 /*
  string         outletName         = await outlet.System.GetName();
