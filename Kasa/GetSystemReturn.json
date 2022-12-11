@@ -1,0 +1,45 @@
+{
+    "system": {
+        "get_sysinfo": {
+            "sw_ver": "1.0.2 Build 210105 Rel.165938",
+            "hw_ver": "1.0",
+            "model": "EP40(US)",
+            "deviceId": "800671BEB946D3C691ECBD2940991375202E1656",
+            "oemId": "2F9215F1DCBF7DC17F80E2B0CACD47FC",
+            "hwId": "B3B7B05B758C3EDA8F9C69FECDBA2111",
+            "rssi": -53,
+            "latitude_i": -806751,
+            "longitude_i": 0,
+            "alias": "TP-LINK_Smart Plug_7600",
+            "status": "new",
+            "mic_type": "IOT.SMARTPLUGSWITCH",
+            "feature": "TIM",
+            "mac": "34:60:F9:FB:76:00",
+            "updating": 0,
+            "led_off": 0,
+            "children": [
+                {
+                    "id": "800671BEB946D3C691ECBD2940991375202E165600",
+                    "state": 1,
+                    "alias": "Outside Plug 1",
+                    "on_time": 1882,
+                    "next_action": {
+                        "type": -1
+                    }
+                },
+                {
+                    "id": "800671BEB946D3C691ECBD2940991375202E165601",
+                    "state": 1,
+                    "alias": "Outside Plug 2",
+                    "on_time": 13333,
+                    "next_action": {
+                        "type": -1
+                    }
+                }
+            ],
+            "child_num": 2,
+            "ntc_state": 0,
+            "err_code": 0
+        }
+    }
+}

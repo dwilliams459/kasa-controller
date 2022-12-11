@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kasa.Console2
+namespace Kasa.Console
 {
     internal class BuildDi
     {

@@ -63,6 +63,7 @@ public struct Timer {
         TotalDuration   = duration;
         WillSetOutletOn = willSetOutletOn;
         RemainingDuration = duration;
+        
     }
 
 }

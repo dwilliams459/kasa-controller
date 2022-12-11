@@ -11,7 +11,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample", "Sample\Sample.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimezoneGenerator", "TimezoneGenerator\TimezoneGenerator.csproj", "{599C181C-A93D-4486-BC3F-6B0DE80CA07A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kasa.Console2", "Kasa.Console2\Kasa.Console2.csproj", "{039D0B9B-0D94-49DB-819B-A5EB8CC86A6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kasa.Console", "Kasa.Console\Kasa.Console.csproj", "{039D0B9B-0D94-49DB-819B-A5EB8CC86A6A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kasa.Web", "Kasa.Web\Kasa.Web.csproj", "{35C9EA76-586B-4579-9C0B-39B28314D784}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kasa.Web.ViewModels", "Kasa.Web.ViewModels\Kasa.Web.ViewModels.csproj", "{8B3B019B-F77A-4BDD-A36A-D837E0422DE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kasa.Web.Api", "Kasa.Web.Api\Kasa.Web.Api.csproj", "{A5CDDB4F-BEDB-47A8-BA33-F6A394239383}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kasa.Web.Data", "Kasa.Web.Data\Kasa.Web.Data.csproj", "{B6F578C0-DADC-4D34-A4C9-4D00014E54F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +47,22 @@ Global
 		{039D0B9B-0D94-49DB-819B-A5EB8CC86A6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{039D0B9B-0D94-49DB-819B-A5EB8CC86A6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{039D0B9B-0D94-49DB-819B-A5EB8CC86A6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35C9EA76-586B-4579-9C0B-39B28314D784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35C9EA76-586B-4579-9C0B-39B28314D784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35C9EA76-586B-4579-9C0B-39B28314D784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35C9EA76-586B-4579-9C0B-39B28314D784}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B3B019B-F77A-4BDD-A36A-D837E0422DE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B3B019B-F77A-4BDD-A36A-D837E0422DE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B3B019B-F77A-4BDD-A36A-D837E0422DE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B3B019B-F77A-4BDD-A36A-D837E0422DE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5CDDB4F-BEDB-47A8-BA33-F6A394239383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5CDDB4F-BEDB-47A8-BA33-F6A394239383}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5CDDB4F-BEDB-47A8-BA33-F6A394239383}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5CDDB4F-BEDB-47A8-BA33-F6A394239383}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6F578C0-DADC-4D34-A4C9-4D00014E54F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6F578C0-DADC-4D34-A4C9-4D00014E54F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6F578C0-DADC-4D34-A4C9-4D00014E54F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6F578C0-DADC-4D34-A4C9-4D00014E54F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

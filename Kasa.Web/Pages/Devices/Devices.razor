@@ -1,0 +1,25 @@
+﻿@using Kasa.Web.Pages.Devices
+@using System.Linq
+@using MudBlazor
+@using System.Net.Http.Json
+@using Kasa.Web.ViewModels
+
+@inject HttpClient httpClient
+
+@page "/Devices"
+@inherits DevicesComponent
+
+<PageTitle>Devices</PageTitle>
+
+<h1>Devices</h1>
+
+<MudButton Variant="Variant.Filled" Color="Color.Primary" >Click Me</MudButton>
+
+<MudDataGrid Items="@Devices.Take(4)">
+    <Columns>
+        <Column T="DeviceViewModel" Field="Id" />
+        <Column T="DeviceViewModel" Field="Name" />
+    </Columns>
+</MudDataGrid>
+
+

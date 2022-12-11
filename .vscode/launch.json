@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/Kasa.Console2/bin/Debug/net6.0/Kasa.Console2.dll",
+            "program": "${workspaceFolder}/Kasa.Console/bin/Debug/net6.0/Kasa.Console.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/Kasa.Console2",
+            "cwd": "${workspaceFolder}/Kasa.Console",
             "console": "internalConsole",
             "stopAtEntry": false
         },
